@@ -20,8 +20,13 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(${PROJECT_NAME} src/pc_transformer.cpp)
+add_executable(pc_transformer_node src/pc_transformer.cpp)
+add_executable(map2odom_node src/map2odom_tf_pub.cpp)
 
-target_link_libraries(${PROJECT_NAME}
+target_link_libraries(pc_transformer_node
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(map2odom_node
   ${catkin_LIBRARIES}
 )

@@ -28,7 +28,7 @@ public:
     //subscriber
     // pointcloud_sub_.subscribe(nh, "/ouster/points", 1);
     // pointcloud_sub_.subscribe(nh, "/velodyne/points", 1);
-    pointcloud_sub_.subscribe(nh, "/os1_cloud_node/points", 1);
+    pointcloud_sub_.subscribe(nh, "/agent1/ouster/points", 1);
     odom_sub_.subscribe(nh, "/Odometry", 1);
 
     sync_.reset(new message_filters::Synchronizer<MySyncPolicy>(MySyncPolicy(10), pointcloud_sub_, odom_sub_));
